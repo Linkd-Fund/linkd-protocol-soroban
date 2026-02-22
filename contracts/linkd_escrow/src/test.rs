@@ -49,23 +49,19 @@ mod test {
 
         client.initialize(&admin, &ngo, &auditor, &beneficiary, &token_address);
 
-        // Add milestone
         client.add_milestone(&1000);
 
-        // Deposit
         client.deposit(&donor, &5000);
         assert_eq!(client.get_total_escrowed(), 5000);
 
-        // NGO submits proof
         let proof = String::from_str(&env, "ipfs://QmProofHash");
         client.submit_proof(&0, &proof);
 
-        // Test one signature is not enough
+        // Verify isolation of signatures
         client.approve_ngo(&0);
         assert_eq!(client.get_total_escrowed(), 5000);
         assert_eq!(token.balance(&beneficiary), 0);
 
-        // Second signature releases funds
         client.approve_auditor(&0);
         assert_eq!(client.get_total_escrowed(), 4000);
         assert_eq!(token.balance(&beneficiary), 1000);
@@ -97,7 +93,6 @@ mod test {
         client.add_milestone(&1000);
         client.deposit(&donor, &5000);
 
-        // Admin decides to refund milestone 0 to treasury
         client.refund_milestone(&0, &treasury);
 
         assert_eq!(client.get_total_escrowed(), 4000);
