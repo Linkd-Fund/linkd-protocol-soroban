@@ -36,6 +36,16 @@ Run the native test suite:
 cargo test
 ```
 
+## Testnet Deployment (Root Truth)
+
+This protocol layer is deployed on the Stellar Testnet.
+
+* **Contract ID:** `CA5O24QV7UXTE4OFHULDAF5QWQOW6MJMN6NSMSMYUFCVLFBEUNMFESMT`
+* **Admin:** `GDNBJ2L4ADLHT2QPSVGUE44VOVDP6Y4NR6RNSFXOP4WHAKII4D36LPZ7`
+* **NGO:** `GDJF3OW2CVALMUG4EACMJEQLHHP23N6FYXQVCWVAHNUHEHO2CZMNKRUN`
+* **Auditor:** `GCVARRTZXCICMT2KDXVYDVE3Q3GNPDKWHJQDJIFYEGHOWA3PSPQ4263I`
+* **Beneficiary:** `GBLTSK6RUMU2OMETRIST6D3PJDHWJE2SROH3SQKQ2GTBFT6AMZA3CG5I`
+
 ## Security
 
 This contract utilizes native Soroban authorization primitives. It avoids redundant parameter passing in favor of protocol-level signature verification. State updates strictly precede external token transfers to eliminate re-entrancy attack vectors.
