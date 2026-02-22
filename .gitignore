@@ -3,3 +3,4 @@ target/
 venv_stellar/
 .DS_Store
 *.log
+test_snapshots/
