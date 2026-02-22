@@ -1,4 +1,4 @@
-# Linkdfund Accountability Protocol: Soroban Escrow
+# Linkd Protocol (Soroban)
 
 A non-custodial, dual-signature escrow primitive built on Stellar's Soroban smart contract platform. This contract serves as the immutable state machine and settlement layer for milestone-based capital disbursement using SEP-41 compatible assets.
 
